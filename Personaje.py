@@ -9,4 +9,3 @@ class personaje:
     def avanzar (self):
         return f"{self.nombre} avanzó."
     
-# def pruebadelu
