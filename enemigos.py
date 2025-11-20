@@ -1,3 +1,5 @@
+from personaje import personaje
+
 class bowser:
     def __init__(self, nombre, vida):
         self.__nombre = nombre
