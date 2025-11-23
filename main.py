@@ -2,10 +2,9 @@ from mario import mario
 from luigi import luigi
 from enemigos import bowser
 
-def main():
+def mostrarMenu():
 
-    while True:
-        print("MENÚ DE OPCIONES")
+        print("\n MENÚ DE OPCIONES")
         print("1. Mario come un honguito")
         print("2. Mario come una flor")
         print("3. Luigi come un honguito")
@@ -16,4 +15,10 @@ def main():
         print("8. Bowser recibe daño")
         print("0. Salir")
 
+def main():
+
+    while True:
+        mostrarMenu()
         opcion = input("selecciona una opción: ")
+        if opcion == "1":
+            mario.comerHonguito()
