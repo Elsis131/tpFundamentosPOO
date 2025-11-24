@@ -1,21 +1,19 @@
-from personaje import personaje
-
 class bowser:
-    def __init__(self, nombre, vida, poderes):
-        super().__init__(nombre, vida)
-        self.__nombre = nombre
-        self.__vida = []
-        self.__poderes = poderes
+    def __init__(self, nombre, vida):
+        self.nombre = nombre
+        self.vida = vida
 
-    def lanzar_fuego(self):
-        return f"{self.nombre} lanzó  fuego!"
+    def lanzarFuego(self):
+        return f"{self.nombre} lanza fuego!"
 
-    def recibir_daño(self, daño):
-        self.vida -= daño
-        return f"{self.nombre} recibió {daño} de daño y le quedan {self.vida} de vida."
-    
-    def ataque_con_salto (self):
-        return f"{self.__nombre} atacó con un salto!"
-    
-    def combo_ataque (self):
-        return f"{self.__nombre} realizó un combo de ataques!"
+    def recibirDanio(self, danio):
+        self.vida -= danio
+        if self.vida < 0:
+            self.vida = 0
+        return f"{self.nombre} recibió {danio} de daño y le quedan {self.vida} de vida."
+
+    def ataqueConSalto(self):
+        return f"{self.nombre} ataca con un salto!"
+
+    def comboAtaque(self):
+        return f"{self.nombre} realiza un combo de ataques!"
