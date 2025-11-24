@@ -2,9 +2,7 @@ from mario import mario
 from luigi import luigi
 from enemigos import bowser
 
-# ---------------------------------------------------------
-# MENÚS
-# ---------------------------------------------------------
+
 
 def menuSeleccionPersonaje():
     print("\n SELECCIONÁ TU PERSONAJE")
@@ -26,15 +24,13 @@ def menuCombate(jugador):
     print("1. Saltar sobre Bowser")
     print("2. Esquivar ataque")
     if hasattr(jugador, "tieneFlor") and jugador.tieneFlor():
-        print("3. Lanzar fuego")      # solo aparece si tiene el poder
+        print("3. Lanzar fuego")     
     print("0. Salir del combate")
 
-# ---------------------------------------------------------
-# FLUJO PRINCIPAL
-# ---------------------------------------------------------
+
 
 def main():
-    # SELECCIÓN DE PERSONAJE ---------------------------------------
+
     while True:
         menuSeleccionPersonaje()
         op = input("Elegí una opción: ")
@@ -52,7 +48,7 @@ def main():
 
     enemigo = bowser("Bowser", 5)
 
-    # EXPLORACIÓN DEL MAPA -----------------------------------------
+
     while True:
         menuExploracion()
         op = input("Elegí una acción: ")
@@ -87,7 +83,7 @@ def main():
         else:
             print("Esa opción no existe.")
 
-    # COMBATE CON BOWSER -------------------------------------------
+
     print("\n BOWSER RUGE Y SE PREPARA PARA ATACARTE")
 
     while enemigo.vida > 0:
@@ -116,7 +112,7 @@ def main():
         else:
             print("Esa acción no existe o no podés usarla.")
 
-        # Turno de Bowser si sigue vivo
+
         if enemigo.vida > 0:
             print("\nBowser te ataca violentamente.")
             respuesta = input("¿Querés intentar esquivar? (s/n): ")
@@ -135,9 +131,6 @@ def main():
     print("\nBowser cae al suelo derrotado; el castillo queda en silencio.")
     print("Ganaste la pelea.")
 
-# ---------------------------------------------------------
-# EJECUCIÓN
-# ---------------------------------------------------------
 
 if __name__ == "__main__":
     main()
