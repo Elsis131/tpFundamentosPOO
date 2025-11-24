@@ -5,12 +5,20 @@ class mario:
         self.nombre = nombre
         self.vida = vida
         self._tieneFlor = False
+        self._comioHonguito = False
+        self._comioFlor = False
 
     def comerHonguito(self):
+        if self._comioHonguito:
+            return f"{self.nombre} ya comió un honguito antes."
+        self._comioHonguito = True
         self.vida += 1
         return f"{self.nombre} comió un honguito y ahora tiene {self.vida} de vida."
 
     def comerFlor(self):
+        if self._comioFlor:
+            return f"{self.nombre} ya comió una flor antes."
+        self._comioFlor = True
         self._tieneFlor = True
         return f"{self.nombre} comió una flor y ahora puede lanzar fuego."
 
