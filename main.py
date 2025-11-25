@@ -1,5 +1,5 @@
-from mario import mario
-from luigi import luigi
+from Mario import mario
+from Luigi import luigi
 from enemigos import bowser
 
 
